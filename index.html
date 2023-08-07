@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="animacaomouse.css">
+    <style>
+        .box {
+    margin: 20%;
+    --angle: 0deg;
+    width: 300px;
+    height: 300px;
+    border: 10px solid;
+    background-color: #1C2C2C;
+    border-image: linear-gradient(var(--angle), #06ffff, #2e423f, #161a1a) 1;
+    animation: 2s rotate linear infinite;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    background: #1c2a44;
+    margin: 25px 0;
+}
+.container {
+    top: 100px;
+    width: 130px;
+    height: 65px;
+    margin: 15px auto;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15rem;
+    line-height: 65px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+svg rect {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1;
+}
+.container:hover svg rect {
+    stroke: #02e4e7;
+}
+svg rect {
+    stroke-dasharray: 400, 0;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+.container:hover svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 35, 245;
+    stroke-dashoffset: 38;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <div class="box">
+    </div> -->
+    <div class="container">
+            <svg width="130" height="65" viewBox="0 0 130 65" 
+            xmls="http://www.w3.org/2000/svg">
+                <rect x='0' y='0' fill='none' width='130' height='65' />
+            </svg>
+        </div>
+    
+</body>
+</html>
